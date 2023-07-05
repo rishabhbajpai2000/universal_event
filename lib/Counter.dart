@@ -1,6 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
-
+// counter class is a ChangeNotifier responsible for notifying the listeners, when there is an update in the count variable.
 class Counter extends ChangeNotifier {
   int _count = 0;
 
