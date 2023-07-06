@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:universal_event/sdk.dart';
 
-import 'Counter.dart';
+
 
 class Page1 extends StatelessWidget {
   @override
@@ -21,23 +21,11 @@ class Page1 extends StatelessWidget {
               },
             ),
             SizedBox(height: 16),
-            Consumer<Counter>(
-              builder: (context, counter, _) {
-                if (counter.count >= 5) {
-                  return Text(
-                    'Event reached 5!',
-                    style: TextStyle(fontSize: 20),
-                  );
-                } else {
-                  return ElevatedButton(
-                    child: Text('Trigger Event'),
-                    onPressed: () {
-                      counter.increment();
-                    },
-                  );
-                }
-              },
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  sendTheEvent();
+                },
+                child: Text('Trigger Event')),
           ],
         ),
       ),
